@@ -1,0 +1,52 @@
+{
+  "name": "markdown-format",
+  "displayName": "markdown-format",
+  "description": "used to format markdown",
+  "version": "0.0.1",
+  "publisher": "hancao97",
+  "icon": "resources/hancao.jpg",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "activationEvents": [
+    "onCommand:markdown-format.format"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-format.format",
+        "title": "格式化markdown"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "markdown-format.format",
+          "when": "filesExplorerFocus",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "1.49.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hancao97/markdown-format"
+  }
+}
